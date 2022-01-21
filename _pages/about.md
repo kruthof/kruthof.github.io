@@ -17,8 +17,6 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: false  # includes social icons at the bottom of the page
 ---
 
-Write my biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+I am a Data Scientist with a background in `Machine Learning and Finance`. I am interested in research at the intersection of these two disciplines, which involve the development, evaluation and implementation of machine learning techniques for `financial market research`. Currently, I am studying the question how `deep reinforcement learning` approaches can help us to provide new insights into `investor behaviour`. 
 
-Put your address / P.O. box / other info right below your picture. You can also disable any these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
-
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](http://fortawesome.github.io/Font-Awesome/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+I am also involved into `open source software development` aiming to provide tools that help us to improve the way we conduct finance research. I have studied Data Analytics (MSc.) at the University College Dublin and Banking & Finance (M.A.) at the University of St.Gallen. 
