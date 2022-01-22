@@ -4,7 +4,7 @@ title: projects
 permalink: /projects/
 description: A growing collection of your cool projects.
 nav: true
-display_categories: [openSource, fun]
+display_categories: [open source]
 horizontal: false
 ---
 
