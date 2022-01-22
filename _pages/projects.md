@@ -1,8 +1,8 @@
 ---
 layout: page
-title: projects
+title: 
 permalink: /projects/
-description: A growing collection of your cool projects.
+description: 
 nav: true
 display_categories: [open source]
 horizontal: false
