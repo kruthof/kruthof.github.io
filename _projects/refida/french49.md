@@ -6,6 +6,11 @@ img:
 importance: 1
 category: datasets
 
+authors:
+  - name: Garvin Kruthof
+    url: "https://kruthof.github.io"
+    affiliations:
+      name: TUM
 
 # Optionally, you can add a table of contents to your post.
 # NOTES:
