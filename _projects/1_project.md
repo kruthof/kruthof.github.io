@@ -1,10 +1,10 @@
 ---
 layout: page
-title: project 1
-description: a project with a background image
+title: refida
+description: A Python Package for Reproducible Financial Data
 img: assets/img/data.jpg
 importance: 1
-category: openSource
+category: open source
 ---
 
 Every project has a beautiful feature showcase page.
