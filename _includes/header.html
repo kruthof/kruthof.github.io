@@ -40,8 +40,10 @@
 
           <!-- About -->
           <li class="nav-item {% if page.title == 'projects' %}active{% endif %}">
-            <a class="nav-link" href="{{ '/' | relative_url }}">about
-              {%- if page.title == "open source" -%}
+            <a class="nav-link" href="{{ '/' | relative_url }}">open source
+              {%- if page.title == "projects" -%}
+              <span class="sr-only">(current)</span>
+
               {%- endif -%}
             </a>
           </li>
