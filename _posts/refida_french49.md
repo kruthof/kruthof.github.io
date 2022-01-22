@@ -4,6 +4,8 @@ title: French49 Dataset
 permalink: /projects/refida/french49/
 description: Dataset based on French 49 Portfolio data incl. technical indicators
 date: 2022-01
+category: open source
+
 
 authors:
   - name: Garvin Kruthof
