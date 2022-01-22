@@ -4,7 +4,7 @@ title: project 1
 description: a project with a background image
 img: assets/img/data.jpg
 importance: 1
-category: open source
+category: openSource
 ---
 
 Every project has a beautiful feature showcase page.
