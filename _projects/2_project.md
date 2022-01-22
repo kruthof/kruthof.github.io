@@ -1,10 +1,10 @@
 ---
 layout: page
-title: project 2
-description: a project with a background image
+title: vixr
+description: A R Package for Reproducing the Volatility Index VIX
 img: 
 importance: 2
-category: work
+category: open source
 ---
 
 Every project has a beautiful feature showcase page.
