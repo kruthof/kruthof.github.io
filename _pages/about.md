@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
+subtitle: <a href='https://www.linkedin.com/in/garvin-kruthof-19586641/'>LinkedIn</a>.
 
 profile:
   align: right
