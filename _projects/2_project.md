@@ -12,7 +12,7 @@ The R Package that reproduces the `volatility index Vix` using S&P 500 option an
 
     ---
     @Manual{,
-    title = {virR: R Package for Reproducing the Volatility Index VIX},
+    title = {vixR: R Package for Reproducing the Volatility Index VIX},
     author = {Garvin Kruthof},
     year = {2018},
     note = {R package version 0.9},
