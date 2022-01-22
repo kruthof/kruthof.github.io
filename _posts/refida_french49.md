@@ -1,6 +1,7 @@
 ---
 layout: distill
 title: French49 Dataset
+permalink: /posts/refida/french49
 description: Dataset based on French 49 Portfolio data incl. technical indicators
 date: 2022-01
 
