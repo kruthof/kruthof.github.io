@@ -2,7 +2,7 @@
 layout: page
 title: refida
 description: A Python Package for Reproducible Financial Data
-img: assets/img/data.jpg
+img: 
 importance: 1
 category: open source
 ---
