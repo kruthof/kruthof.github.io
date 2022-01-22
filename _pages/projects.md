@@ -1,8 +1,8 @@
 ---
 layout: page
-title: 
+title: _projects
 permalink: /projects/
-description: 
+description: A list of my current and previous projects.
 nav: true
 display_categories: [open source]
 horizontal: false
