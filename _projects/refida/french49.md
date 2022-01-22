@@ -55,13 +55,13 @@ WIP
 
 ## Overview
 
-The dataset is based on the [49 industry portfolios data](https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/Data_Library/det_49_ind_port.html) published by Kenneth R. French using equally weighting method. The original data features missing values until around 1969. This time episode is excluded, resulting in a time window of 1969 - 2021. Preprocessing generates various technical indicators for each portfolio and changes the shape of the data frame, to make it more convenient for subsequent analysis.
+The dataset is based on the [49 industry portfolios data](https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/Data_Library/det_49_ind_port.html) published by Kenneth R. French using equally weighting method. The original data features missing values until mid 1969. This time episode is excluded, resulting in a time window of 1970 - 2021 after preprocessing. Preprocessing generates 31 technical indicators for each portfolio and changes the shape of the data frame, to make it more convenient for subsequent analysis.
 
 ***
 
 ## Features
 
-While the original dataset by French contains return values, the French49 dataset converts these into price data using 100 as starting values for each portfolio in 1969. Beside these price information, the dataset contains the following features:
+While the original dataset by French contains return values, the French49 dataset converts these into price data using 100 as starting values for each portfolio in July 1969. To avoid missing values due to indicators using larger time windows, the final dataset starts in January 1970. Beside price information, the dataset contains the following features:
 
 * Bollinger Bands: ...
 * ...
