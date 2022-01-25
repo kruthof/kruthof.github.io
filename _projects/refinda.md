@@ -1,6 +1,6 @@
 ---
 layout: page
-title: refida
+title: refinda
 description: A Python Package for Reproducible Financial Data
 img: 
 importance: 1
