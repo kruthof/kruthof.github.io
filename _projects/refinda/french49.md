@@ -5,9 +5,7 @@ description: French 49 Industry Portfolio + Technical Indicators
 img: 
 importance: 1
 category: datasets
-customjs:
-  - https://d3js.org/d3.v3.min.js
-  - https://raw.githubusercontent.com/kruthof/kruthof.github.io/master/_projects/refinda/script.js
+
 
 authors:
   - name: Garvin Kruthof
@@ -65,8 +63,4 @@ The dataset is based on the [49 industry portfolios data](https://mba.tuck.dartm
 ## Features
 
 While the original dataset by French contains return values, the French49 dataset converts these into price data using 100 as starting values for each portfolio in July 1969. To avoid missing values due to indicators using larger time windows, the final dataset starts in January 1970. Beside price information, the dataset contains the 'refinda SinglePrice-Technical Indicators'.
-
-
-<script async type="text/javascript" src="{{ https://d3js.org/d3.v3.min.js }}"></script>
-<script async type="text/javascript" src="{{ https://raw.githubusercontent.com/kruthof/kruthof.github.io/master/_projects/refinda/script.js }}"></script>
 
