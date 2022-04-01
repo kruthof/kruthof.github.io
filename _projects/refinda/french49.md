@@ -61,14 +61,18 @@ The dataset is based on the [49 industry portfolios data](https://mba.tuck.dartm
 
 ## Features
 
-While the original dataset by French contains return values, the French49 dataset converts these into price data using 100 as starting values for each portfolio in July 1969. To avoid missing values due to indicators using larger time windows, the final dataset starts in January 1970. Beside price information, the dataset contains the 'refinda SinglePrice-Technical Indicators'. !
+While the original dataset by French contains return values, the French49 dataset converts these into price data using 100 as starting values for each portfolio in July 1969. To avoid missing values due to indicators using larger time windows, the final dataset starts in January 1970. Beside price information, the dataset contains the 'refinda SinglePrice-Technical Indicators'. 
 <div id="body">
-  test
+  
 </div>
 
-<div style="display: none;">
-<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-<script  src="https://raw.githubusercontent.com/kruthof/kruthof.github.io/master/_projects/refinda/script.js"></script>
+<div style="display: none">
+    <![CDATA[<script src="https://d3js.org/d3.v3.min.js" charset="utf-8">
+    <!--<![CDATA[--><![CDATA[
+    </script>
+    <![CDATA[<script  src="https://raw.githubusercontent.com/kruthof/kruthof.github.io/master/_projects/refinda/script.js">
+    <!--<![CDATA[--><![CDATA[
+    // <![CDATA[
+    </script><![CDATA[]]>
 </div>
-
 
