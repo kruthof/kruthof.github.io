@@ -5,6 +5,9 @@ description: French 49 Industry Portfolio + Technical Indicators
 img: 
 importance: 1
 category: datasets
+customjs:
+  - https://d3js.org/d3.v3.min.js
+  - https://raw.githubusercontent.com/kruthof/kruthof.github.io/master/_projects/refinda/script.js
 
 authors:
   - name: Garvin Kruthof
@@ -51,7 +54,10 @@ _styles: >
 
 **NOTE:**
 WIP
-
+<!-- Custom JavaScript files set in YAML front matter -->
+{% for js in page.customjs %}
+<script async type="text/javascript" src="{{ js }}"></script>
+{% endfor %}
 
 ## Overview
 
