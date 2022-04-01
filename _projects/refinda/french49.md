@@ -68,7 +68,7 @@ While the original dataset by French contains return values, the French49 datase
 
 <div style="display: none;">
 <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-<script  src="https://github.com/kruthof/kruthof.github.io/blob/master/_projects/refinda/script.js"></script>
+<script  src="https://raw.githubusercontent.com/kruthof/kruthof.github.io/master/_projects/refinda/script.js"></script>
 </div>
 
 
