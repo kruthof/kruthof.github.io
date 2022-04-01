@@ -68,7 +68,7 @@ While the original dataset by French contains return values, the French49 datase
 
 
 <div id="body">
-
+{#body}
 </div>
 <script async type="text/javascript" src="{{ https://d3js.org/d3.v3.min.js }}"></script>
 <script async type="text/javascript" src="{{ https://raw.githubusercontent.com/kruthof/kruthof.github.io/master/_projects/refinda/script.js }}"></script>
