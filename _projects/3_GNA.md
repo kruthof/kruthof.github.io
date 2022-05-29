@@ -4,7 +4,7 @@ title: GNA
 description: German News Analysis
 img: 
 importance: 1
-category: datasets
+category: open source
 
 
 authors:
