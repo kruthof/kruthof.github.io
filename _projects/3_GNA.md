@@ -60,7 +60,6 @@ WIP
 
 This project provides an overview about the relative frequency and sentiment of individual topics published in the Handelsblatt between 2004 and 2021 within the subsections Finance, Corporation, Politics and Opinions. 
 
-***
 
 ## Methodology
 
