@@ -67,9 +67,16 @@ This project provides an overview about the relative frequency and sentiment of 
 All articles have been translated to english first. Articles have been encoded using Bidirectional Autoencoder using Transformers (Bert). Next, UMAP has been used to reduce dimensionality from 512 to 10. HDBSCAN has been used for clustering. Sentiments are estimated using FinBert. Overall, 76 unique topics have been identified.
 
 ## Visualization
+Detailed information can be found using the [visualisation app](https://share.streamlit.io/kruthof/gna/main/app.py)!
+
+The figures below provide an overview about the development of topic frequencies and sentiments over time.
+
 ![Frequencies over time ](https://raw.githubusercontent.com/kruthof/kruthof.github.io/master/assets/img/gna/frequencies_over_time.png)
+
 ![Sentiments over time ](https://raw.githubusercontent.com/kruthof/kruthof.github.io/master/assets/img/gna/Sentiments_over_time.png)
-![Frequencies over time ](https://raw.githubusercontent.com/kruthof/kruthof.github.io/bc33ea7f04939c9406db82bade80027002f6b5e1/assets/img/gna/Frequency_Sentiments_over_time.png)
+
+![Frequency-Scales Sentiments over time ](https://raw.githubusercontent.com/kruthof/kruthof.github.io/bc33ea7f04939c9406db82bade80027002f6b5e1/assets/img/gna/Frequency_Sentiments_over_time.png)
 
 
 ## Download
+soon
