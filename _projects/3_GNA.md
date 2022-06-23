@@ -70,4 +70,4 @@ All articles have been translated to english first. Articles have been encoded u
 
 
 ## Download
-![Frequencies over time ](assets/img/gna/frequencies_over_time.png)
+![Frequencies over time ](https://raw.githubusercontent.com/kruthof/kruthof.github.io/bc33ea7f04939c9406db82bade80027002f6b5e1/assets/img/gna/Frequency_Sentiments_over_time.png)
