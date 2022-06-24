@@ -52,8 +52,8 @@ _styles: >
 
 ---
 
-**NOTE:**
-WIP
+**Release Notes:**
+- Version 1.0: Topic frequencies & Topic Sentiments for 2004-2021
 
 
 ## Overview
