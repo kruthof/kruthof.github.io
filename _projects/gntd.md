@@ -24,6 +24,7 @@ toc:
   - name: Methodology
   - name: Visualization
   - name: Download
+  - name: Cite
 
     # if a section has subsections, you can add them as follows:
     # subsections:
