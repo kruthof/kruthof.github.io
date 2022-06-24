@@ -58,8 +58,7 @@ _styles: >
 
 ## Overview
 
-This project provides an overview about the relative frequency and sentiment of individual topics published in the Handelsblatt between 2004 and 2021 within the subsections Finance, Corporation, Politics and Opinions. 
-
+This dataset provides the relative frequency and sentiment of topics covered by 450.000 Handelsblatt articles between 2004 and 2021 within the subsections Finance, Corporation, Politics and Opinions. 
 
 ## Methodology
 
