@@ -1,6 +1,6 @@
 ---
 layout: distill
-title: GNA
+title: GNTD
 description: German News Analysis using BERT models
 img: 
 importance: 1
@@ -78,4 +78,18 @@ The figures below provide an overview about the development of topic frequencies
 
 
 ## Download
-soon
+- [Relative Topic Frequnecies per months](https://raw.githubusercontent.com/kruthof/kruthof.github.io/master/assets/img/gntd/frequencies_over_time.png)
+
+- [Topic Sentiments per month](https://raw.githubusercontent.com/kruthof/kruthof.github.io/master/assets/data/gntd/GNA_Sentiment.csv)
+
+## Cite
+
+    ---
+    @Manual{,
+    title = {GNTD: German News Topics Dataset},
+    author = {Garvin Kruthof},
+    year = {2022},
+    note = {GNTD version 1.0},
+    url = {https://github.com/kruthof/gntd},
+  
+    ---
