@@ -78,7 +78,7 @@ The figures below provide an overview about the development of topic frequencies
 
 
 ## Download
-- [Relative Topic Frequnecies per months](https://raw.githubusercontent.com/kruthof/kruthof.github.io/master/assets/img/gntd/frequencies_over_time.csv)
+- [Relative Topic Frequnecies per months](https://raw.githubusercontent.com/kruthof/kruthof.github.io/master/assets/img/gntd/GNA_Relative_Frequency.csv)
 
 - [Topic Sentiments per month](https://raw.githubusercontent.com/kruthof/kruthof.github.io/master/assets/data/gntd/GNA_Sentiment.csv)
 
