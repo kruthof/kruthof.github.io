@@ -4,7 +4,7 @@ title: GNA
 description: German News Analysis using BERT models
 img: 
 importance: 1
-category: open source
+category: nlp
 
 
 authors:
