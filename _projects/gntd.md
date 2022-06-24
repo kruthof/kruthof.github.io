@@ -62,7 +62,7 @@ This dataset provides the relative frequency and sentiment of topics covered by 
 
 ## Methodology
 
-All articles have been translated to english first. Articles have been encoded using Bidirectional Autoencoder using Transformers (Bert). Next, UMAP has been used to reduce dimensionality from 512 to 10. HDBSCAN has been used for clustering. Sentiments are estimated using FinBert. Overall, 76 unique topics have been identified.
+All articles have been translated to english first. Articles have been encoded using Bidirectional Autoencoder using Transformers (BERT). Next, UMAP has been used to reduce dimensionality from 512 to 10. HDBSCAN has been used for clustering. Sentiments are estimated using FinBERT. Overall, 76 unique topics have been identified.
 
 ## Visualization
 Detailed information can be found using the [visualisation app](https://share.streamlit.io/kruthof/gna/main/app.py)!
