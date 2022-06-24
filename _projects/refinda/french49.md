@@ -4,7 +4,7 @@ title: French49
 description: French 49 Industry Portfolio + Technical Indicators
 img: 
 importance: 1
-category: datasets
+category: refinda datasets
 
 
 authors:

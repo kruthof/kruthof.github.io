@@ -5,7 +5,7 @@ description: A Python Package for Reproducible Financial Data
 img: 
 importance: 1
 category: open source
-display_categories: [datasets]
+display_categories: [refinda datasets]
 
 ---
 
