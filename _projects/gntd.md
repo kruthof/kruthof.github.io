@@ -1,7 +1,7 @@
 ---
 layout: distill
 title: GNTD
-description: German News Topic Dataset - Topic Frequency & Sentiment Development
+description: German News Topics Dataset - Topic Frequency & Sentiment Development
 img: 
 importance: 1
 category: datasets
