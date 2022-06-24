@@ -91,5 +91,5 @@ The figures below provide an overview about the development of topic frequencies
     year = {2022},
     note = {GNTD version 1.0},
     url = {https://github.com/kruthof/gntd},
-  
+     }
     ---
