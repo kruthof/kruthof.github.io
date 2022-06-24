@@ -1,7 +1,7 @@
 ---
 layout: distill
 title: GNTD
-description: German News Analysis using BERT models
+description: German News: Topic Frequency & Sentiment Development
 img: 
 importance: 1
 category: datasets
