@@ -1,7 +1,7 @@
 ---
 layout: distill
 title: GNTD
-description: German News - Topic Frequency & Sentiment Development
+description: German News Topic Dataset - Topic Frequency & Sentiment Development
 img: 
 importance: 1
 category: datasets
@@ -77,7 +77,7 @@ The figures below provide an overview about the development of topic frequencies
 
 
 ## Download
-- [Relative Topic-Frequnecy per months](https://raw.githubusercontent.com/kruthof/kruthof.github.io/master/assets/data/gntd/GNTD_Relative_Frequency.csv)
+- [Relative Topic-Frequency per months](https://raw.githubusercontent.com/kruthof/kruthof.github.io/master/assets/data/gntd/GNTD_Relative_Frequency.csv)
 
 - [Topic-Sentiments per month](https://raw.githubusercontent.com/kruthof/kruthof.github.io/master/assets/data/gntd/GNTD_Sentiment.csv)
 
