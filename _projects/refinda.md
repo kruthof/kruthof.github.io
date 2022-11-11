@@ -9,7 +9,7 @@ display_categories: [refinda datasets]
 
 ---
 
-The purpose of of this package is to improve `reproducibility of research` at the intersection of machine learning and finance by providing `standardized datasets`. The data will not be included in the package itself but downloaded on-demand from `external data providers` using pre-defined SQL-quieries or http requests. `Pre-processing` methods will be included for data cleaning, indicator calculation, etc. `WIP`
+The purpose of of this package is to improve `reproducibility of research` at the intersection of machine learning and finance by providing `standardized datasets` and `build-in methods` for data processing and common trading strategies.  `WIP`
 
 
 
