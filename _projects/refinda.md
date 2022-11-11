@@ -12,6 +12,17 @@ display_categories: [refinda datasets]
 The purpose of of this package is to improve `reproducibility of research` at the intersection of machine learning and finance by providing `standardized datasets` and `build-in methods` for data processing and common trading strategies. [Github Repository](https://github.com/kruthof/refinda) `WIP`
 
 
+## Cite
+
+    ---
+    @Manual{,
+    title = {Refinda: A Python Package for Reproducible Financial Data},
+    author = {Garvin Kruthof},
+    year = {2022},
+    note = {Refinda 1.0},
+    url = {https://kruthof.github.io/projects/reifinda},
+     }
+    ---
 
 <!-- pages/projects.md -->
 <div class="projects">
