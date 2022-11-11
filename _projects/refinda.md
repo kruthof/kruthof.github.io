@@ -20,7 +20,7 @@ The purpose of of this package is to improve `reproducibility of research` at th
     author = {Garvin Kruthof},
     year = {2022},
     note = {Refinda 1.0},
-    url = {https://kruthof.github.io/projects/reifinda},
+    url = {https://kruthof.github.io/projects/refinda},
      }
     ---
 
