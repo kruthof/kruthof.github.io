@@ -6,7 +6,7 @@ subtitle: <a href='https://www.linkedin.com/in/garvin-kruthof-19586641/'>LinkedI
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: profile_large_centered.jpeg
   address: >
     <p></p>
     <p></p>
