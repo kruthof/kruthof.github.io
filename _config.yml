@@ -7,8 +7,8 @@ first_name: Garvin
 middle_name: 
 last_name: Kruthof
 email: you@example.com
-description: > # the ">" symbol means to ignore newlines until "footer_text:"
-Solving Financial Markets Puzzles Using Machine Learning!
+description: Solving Financial Markets Puzzles Using Machine Learning! # the ">" symbol means to ignore newlines until "footer_text:"
+
 footer_text: >
 keywords: machine learning, finance, climate finance, remote sensing, reinforcement learning, deep learning, transfer learning, TUM, FHGR  # add your own keywords or leave empty
 
