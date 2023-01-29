@@ -2,13 +2,13 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: Solving Financial Market Puzzles using Machine Learning # the website title (if blank, full name will be used instead)
+title: Garvin Kruthof # the website title (if blank, full name will be used instead)
 first_name: Garvin
 middle_name: 
 last_name: Kruthof
 email: you@example.com
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Solving Financial Market Puzzles using Machine Learning
+
 footer_text: >
 keywords: machine learning, finance, reinforcement learning, deep learning, transfer learning, TUM, FHGR  # add your own keywords or leave empty
 
