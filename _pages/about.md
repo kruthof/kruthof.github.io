@@ -1,7 +1,8 @@
 ---
 layout: about
-title: about
-permalink: /
+title: "Garvin Kruthof"
+description: Solving Financial Market Puzzles using Machine Learning 
+permalink: /about/
 subtitle: <a href='https://www.linkedin.com/in/garvin-kruthof-19586641/'>LinkedIn</a>.
 
 profile:
