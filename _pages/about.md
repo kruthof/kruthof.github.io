@@ -1,6 +1,6 @@
 ---
 layout: about
-title: Garvin Kruthof
+title: about
 permalink: /
 subtitle: <a href='https://www.linkedin.com/in/garvin-kruthof-19586641/'>LinkedIn</a>.
 
