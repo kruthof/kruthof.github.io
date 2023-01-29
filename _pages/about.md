@@ -1,6 +1,7 @@
 ---
 layout: about
 title: about
+description: Solving Financial Markets Puzzles Using Machine Learning!
 permalink: /
 subtitle: <a href='https://www.linkedin.com/in/garvin-kruthof-19586641/'>LinkedIn</a>.
 
