@@ -2,12 +2,12 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: Solving Financial Markets Puzzles Using Machine Learning!  # the website title (if blank, full name will be used instead)
+title: Tackling Sustainable Finance using Machine Learning!  # the website title (if blank, full name will be used instead)
 first_name: Garvin
 middle_name: 
 last_name: Kruthof
 email: you@example.com
-description: Solving Financial Markets Puzzles Using Machine Learning! # the ">" symbol means to ignore newlines until "footer_text:"
+description: Tackling Sustainable Finance using Machine Learning! # the ">" symbol means to ignore newlines until "footer_text:"
 footer_text: >
 keywords: garvin kruthof, machine learning, finance, climate finance, remote sensing, reinforcement learning, deep learning, transfer learning, TUM, FHGR  # add your own keywords or leave empty
 

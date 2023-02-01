@@ -17,7 +17,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: false  # includes social icons at the bottom of the page
 ---
 
-I am a Data Scientist with a background in `Machine Learning and Finance`. I am interested in research at the intersection of these two disciplines, which involves the development, evaluation and implementation of machine learning techniques for `financial market research`. My current projects include: 
+I am a Data Scientist with a background in `Machine Learning and Finance`. I am interested in research at the intersection of these two disciplines, which involves the development, evaluation and implementation of machine learning techniques for `sustainable finance`. My current projects include: 
 * Application of `deep reinforcement learning` approaches to portfolio management and its capacity to provide new insights into `investor behaviour`. 
 * Utilisation of remote sensoring in the context of `climate finance`. 
 
