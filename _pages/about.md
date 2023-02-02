@@ -18,7 +18,7 @@ social: false  # includes social icons at the bottom of the page
 ---
 
 I am a Data Scientist with a background in `Machine Learning and Finance`. I am interested in research at the intersection of these two disciplines, which involves the development, evaluation and implementation of machine learning techniques for `sustainable finance`. My current projects include: 
+* Utilisation of remote sensoring and NLP in the context of `climate finance`.
 * Application of `deep reinforcement learning` approaches to portfolio management and its capacity to provide new insights into `investor behaviour`. 
-* Utilisation of remote sensoring in the context of `climate finance`. 
 
 I am also involved into `open source software development` aiming to provide tools that help us to improve the way we conduct research at the intersection of finance and machine learning. I have studied Data Analytics (MSc.) at the University College Dublin and Banking & Finance (M.A.) at the University of St.Gallen. 
