@@ -1,7 +1,8 @@
 ---
 layout: about
-title: about
+title: Garvin Kruthof
 permalink: /
+description: Tackling Sustainable Finance using Machine Learning!
 subtitle: <a href='https://www.linkedin.com/in/garvin-kruthof-19586641/'>LinkedIn</a>.
 
 profile:
