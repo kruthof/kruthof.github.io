@@ -8,9 +8,6 @@ category: machine learning models
 
 ---
 
-
-# Description:
-
 ClimateAttention `classifies` if a given text sequence is related to `climate topics`. 
 The models and detailed descriptions can be found here:
 
