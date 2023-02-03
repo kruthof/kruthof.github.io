@@ -4,7 +4,7 @@ title: projects
 permalink: /projects/
 description: A list of my current and previous projects.
 nav: true
-display_categories: [open source,datasets]
+display_categories: [open source,machine learning models, datasets]
 horizontal: false
 ---
 
