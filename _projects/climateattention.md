@@ -1,7 +1,7 @@
 ---
 layout: page
-title: ClimateAttention
-description: ClimateAttention Classifier
+title: Climate Attention
+description: A Climate Topic Classifier
 img: 
 importance: 1
 category: machine learning models
