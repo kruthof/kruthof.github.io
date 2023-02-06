@@ -20,7 +20,7 @@ The models and detailed descriptions can be found below. For news articles or co
     @misc{kruthof2023,
         title={ClimateAttention: A Fine-Tuned Climate Attention Classifier},
         author={Kruthof, Garvin},
-        url={https://huggingface.co/kruthof/climateattention-ctw},
+        url={https://kruthof.github.io/projects/climateattention/},
         year={2023}
     ---
 
