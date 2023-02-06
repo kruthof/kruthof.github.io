@@ -22,6 +22,7 @@ The models and detailed descriptions can be found below. For news articles or co
         author={Kruthof, Garvin},
         url={https://kruthof.github.io/projects/climateattention/},
         year={2023}
+    }
     ---
 
 
