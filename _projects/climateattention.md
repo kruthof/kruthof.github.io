@@ -9,9 +9,12 @@ category: machine learning models
 ---
 
 ClimateAttention `classifies` if a given text sequence is related to `climate topics`. 
-The models and detailed descriptions can be found here:
+The models and detailed descriptions can be found below. For news articles or company disclosures, you might want to test the upscaled 10k model. 
 
-*  [climateattention-ctw ](https://huggingface.co/kruthof/climateattention-ctw)
+* [climateattention-ctw ](https://huggingface.co/kruthof/climateattention-ctw)
+* [climateattention-10k ](https://huggingface.co/kruthof/climateattention-10k)
+* [climateattention-10k-upscaled ](https://huggingface.co/kruthof/climateattention-10k-upscaled)
+
 
 # Cite:
     ---
