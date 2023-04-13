@@ -1,5 +1,5 @@
 ---
-layout: about
+layout: page
 title: teaching
 permalink: /teaching/
 description: Teaching & Thesis Supervision
@@ -11,6 +11,7 @@ profile:
     <p></p>
     <p></p>
     <p></p>
+nav: true
 
 news: false  # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
@@ -22,5 +23,3 @@ Current and previous `Master Thesis` supervised by me include:
 * Sustainable Finance: Impact of Language on Firm Perception
 
 
-#Current and previous `university courses` teached by me include:
-#* 
