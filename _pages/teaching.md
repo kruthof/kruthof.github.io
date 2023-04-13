@@ -18,7 +18,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: false  # includes social icons at the bottom of the page
 ---
 
-Current and previous `Master Thesis` supervised by me include:
+Current and previous `Master Theses` supervised by me include:
 * Bayesian Deep Learning: Managing Price Prediction Uncertainty
 * Sustainable Finance & Firm Perception
 
