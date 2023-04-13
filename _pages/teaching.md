@@ -20,6 +20,6 @@ social: false  # includes social icons at the bottom of the page
 
 Current and previous `Master Thesis` supervised by me include:
 * Bayesian Deep Learning: Managing Price Prediction Uncertainty
-* Sustainable Finance: Impact of Language on Firm Perception
+* Sustainable Finance & Firm Perception
 
 
