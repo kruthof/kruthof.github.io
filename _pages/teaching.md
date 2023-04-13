@@ -19,7 +19,7 @@ social: false  # includes social icons at the bottom of the page
 ---
 
 Current and previous `Master Theses` supervised by me include:
-* Bayesian Deep Learning: Managing Price Prediction Uncertainty
-* Sustainable Finance & Firm Perception
+* Bayesian Deep Learning: Managing Price Prediction Uncertainty (*Technical University of Munich*)
+* Sustainable Finance & Firm Perception (*Technical University of Munich*)
 
 
