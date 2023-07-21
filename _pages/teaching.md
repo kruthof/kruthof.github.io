@@ -23,7 +23,9 @@ Current and previous `master theses` supervised by me include:
 * Sustainable Finance & Firm Perception (*Technical University of Munich*)
 * Machine Learning for Investment Management Operations: Opportunities and Challenges in the context of Sustainable Investment (*Technical University of Munich*)
 
-Current `university courses` teached by me:
+Current and planned `university courses` teached by me:
+* Innovation Management (*FHGR*)
+* Technology and Sustainability (*FHGR*)
 * Reinforcement Learning (*FHGR*)
 * Recommender Systems (*FHGR*)
 * Programming with Python (*FHGR*)
