@@ -25,8 +25,7 @@ Current and previous `master theses` supervised by me include:
 * Adversarial Attacks on Deep Learning Sentiment Classifications in the Context of Annual Reports (*Technical University of Munich*)
 
 Current and planned `university courses` teached by me:
-* Innovation Management (*FHGR*)
-* Technology and Sustainability (*FHGR*)
+* Data Science for Finance (*FHGR*)
 * Reinforcement Learning (*FHGR*)
 * Recommender Systems (*FHGR*)
 * Programming with Python (*FHGR*)
