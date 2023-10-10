@@ -22,6 +22,7 @@ Current and previous `master theses` supervised by me include:
 * Bayesian Deep Learning: Managing Price Prediction Uncertainty (*Technical University of Munich*)
 * Sustainable Finance & Firm Perception (*Technical University of Munich*)
 * Machine Learning for Investment Management Operations: Opportunities and Challenges in the context of Sustainable Investment (*Technical University of Munich*)
+* Adversarial Attacks on Deep Learning Sentiment Classifications in the Context of Annual Reports (*Technical University of Munich*)
 
 Current and planned `university courses` teached by me:
 * Innovation Management (*FHGR*)
