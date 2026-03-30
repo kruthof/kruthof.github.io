@@ -18,10 +18,22 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: false  # includes social icons at the bottom of the page
 ---
 
-I am a senior lecturer and researcher with a background in `Machine Learning and Financial Markets`. I am interested in research at the intersection of these two disciplines. Thereby, I want to understand 1) how we can utilize modern AI technology to tackle the major problems of our time and 2) what are the implications of AI for our societies. My current projects include: 
+I am a PhD candidate in `Machine Learning and Economics` at the Technical University of Munich, as well as a senior lecturer and researcher. My work lies at the intersection of `economics`, `machine learning`, and `text-based empirical analysis`.
 
-* Utilisation of machine learning in the context of `climate finance`.
-* Investigating implied knowledge within `large language models`
-* Understanding the `implications of AI technology` on social welfare 
+My research focuses on how `complex information` is processed, interpreted, and incorporated into economic decisions when attention is limited, uncertainty is high, and increasingly, `AI systems mediate understanding`. I am particularly interested in how AI changes the cost of interpretation, the representation of signals, and the quality and credibility of the information that economic actors rely on.
 
-I am also involved into `open source software development` aiming to provide tools that help us to improve the way we conduct research at the intersection of economics and machine learning. I have studied Data Analytics (MSc.) at the University College Dublin and Banking & Finance (M.A.) at the University of St.Gallen. 
+More specifically, my current work studies:
+
+* `attention to public information` and the delayed incorporation of complex institutional text into markets
+* `AI-based signal extraction` from macroeconomic, institutional, and media text
+* how `ambiguity and uncertainty` condition when information becomes economically consequential
+* `economic measurement in AI-mediated environments`, including the credibility and time-validity of AI-derived text measures
+
+A broader theme running through my research is that financial markets provide a useful empirical setting for studying information processing because prices, and especially option prices, can reveal how information is incorporated across channels and under different uncertainty regimes. I therefore use markets not only as outcomes of interest, but also as observables of information processing.
+
+I am also interested in the methodological side of AI in research. This includes work on `look-ahead bias`, `information leakage`, and the development of practical tools that make AI-based empirical measurement more interpretable, auditable, and robust.
+
+My academic background includes an MSc in `Data Analytics` from University College Dublin and an MA in `Banking and Finance` from the University of St.Gallen.
+
+Overall, my research asks a simple but increasingly important question:  
+how does AI change what is understood, by whom, how quickly, and with what economic consequences?
