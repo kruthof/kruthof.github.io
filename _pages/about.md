@@ -18,7 +18,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: false  # includes social icons at the bottom of the page
 ---
 
-I am a PhD candidate in `Machine Learning and Economics` at the Technical University of Munich, as well as a senior lecturer and researcher. My work lies at the intersection of `economics`, `machine learning`, and `text-based empirical analysis`.
+I am a senior lecturer and researcher  in `Machine Learning and Economics`. My work lies at the intersection of `finance`, `machine learning`, and `text-based empirical analysis`.
 
 My research focuses on how `complex information` is processed, interpreted, and incorporated into economic decisions when attention is limited, uncertainty is high, and increasingly, `AI systems mediate understanding`. I am particularly interested in how AI changes the cost of interpretation, the representation of signals, and the quality and credibility of the information that economic actors rely on.
 
@@ -36,4 +36,4 @@ I am also interested in the methodological side of AI in research. This includes
 My academic background includes an MSc in `Data Analytics` from University College Dublin and an MA in `Banking and Finance` from the University of St.Gallen.
 
 Overall, my research asks a simple but increasingly important question:  
-how does AI change what is understood, by whom, how quickly, and with what economic consequences?
+`how does AI change what is understood, by whom, how quickly, and with what economic consequences?`
