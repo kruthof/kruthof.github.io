@@ -20,7 +20,7 @@ social: false  # includes social icons at the bottom of the page
 
 I am a researcher working at the intersection of `AI`, `information processing`, and `economics`.
 
-My research examines how complex information is interpreted, incorporated into decisions, and translated into economic outcomes—especially in settings where attention is limited, uncertainty is high, and increasingly, `AI systems mediate understanding`.
+My research examines how complex information is interpreted, incorporated into decisions, and translated into economic outcomes, especially in settings where attention is limited, uncertainty is high, and increasingly, `AI systems mediate understanding`.
 
 A central question running through my work is:
 
