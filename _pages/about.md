@@ -37,7 +37,7 @@ My current research focuses on:
 
 ## Research Perspective
 
-A broader theme in my work is that financial markets provide a powerful empirical setting for studying information processing. Prices—and especially option prices—can reveal how information is incorporated across channels and under different uncertainty regimes.
+A broader theme in my work is that financial markets provide a powerful empirical setting for studying information processing. Prices can reveal how information is incorporated across channels and under different uncertainty regimes.
 
 I therefore use markets not only as outcomes of interest, but also as observables of `interpretation`, `attention`, and `belief formation`.
 
