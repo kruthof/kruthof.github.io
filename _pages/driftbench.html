@@ -321,9 +321,40 @@ function saveAndNext() {
   window.scrollTo(0, 0);
 }
 
-function nextItem() { currentIdx = Math.min(currentIdx + 1, items.length - 1); renderItem(); window.scrollTo(0,0); }
-function prevItem() { currentIdx = Math.max(currentIdx - 1, 0); renderItem(); window.scrollTo(0,0); }
+function autoSaveCurrent() {
+  const item = items[currentIdx];
+  const statuses = [];
+  let answered = 0;
+  item.hard_constraints.forEach((_, i) => {
+    const checked = document.querySelector(`input[name="c${i}"]:checked`);
+    if (checked) { statuses.push(checked.value); answered++; }
+    else { statuses.push(null); }
+  });
+  if (answered === 0) return true; // nothing to lose
+  if (answered < item.hard_constraints.length) {
+    return confirm('You have unsaved answers on this item. Leave without saving?');
+  }
+  // All answered — auto-save
+  const violated = statuses.filter(s => s === 'Violated').length;
+  const stretched = statuses.filter(s => s === 'Stretched').length;
+  let score = 4;
+  if (violated >= 3) score = 0;
+  else if (violated === 2) score = 1;
+  else if (violated === 1) score = 2;
+  else if (stretched >= 1) score = 3;
+  results[item.run_id] = {
+    run_id: item.run_id, brief_id: item.brief_id, rater_id: raterId,
+    constraint_statuses: statuses, violated_count: violated,
+    stretched_count: stretched, computed_score: score,
+    notes: document.getElementById('notes-input').value,
+  };
+  localStorage.setItem('driftbench_' + raterId, JSON.stringify(results));
+  return true;
+}
+function nextItem() { if (!autoSaveCurrent()) return; currentIdx = Math.min(currentIdx + 1, items.length - 1); renderItem(); window.scrollTo(0,0); }
+function prevItem() { if (!autoSaveCurrent()) return; currentIdx = Math.max(currentIdx - 1, 0); renderItem(); window.scrollTo(0,0); }
 function nextUnscored() {
+  if (!autoSaveCurrent()) return;
   const idx = items.findIndex(it => !(it.run_id in results));
   if (idx >= 0) { currentIdx = idx; renderItem(); window.scrollTo(0,0); }
 }
