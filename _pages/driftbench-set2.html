@@ -1,0 +1,341 @@
+---
+permalink: /driftbench-set2.html
+layout: null
+sitemap: false
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DriftBench Constraint Scoring — Set 2</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; color: #333; }
+  .header { background: #1a1a2e; color: white; padding: 20px 30px; position: sticky; top: 0; z-index: 100; }
+  .header h1 { font-size: 18px; }
+  .header .progress { margin-top: 8px; display: flex; align-items: center; gap: 12px; }
+  .header .progress-bar { flex: 1; height: 8px; background: #333; border-radius: 4px; overflow: hidden; }
+  .header .progress-fill { height: 100%; background: #4CAF50; transition: width 0.3s; }
+  .header .progress-text { font-size: 14px; color: #aaa; }
+  .header .nav { margin-top: 8px; display: flex; gap: 10px; align-items: center; }
+  .header button { padding: 6px 16px; border: none; border-radius: 4px; cursor: pointer; font-size: 13px; }
+  .btn-primary { background: #4CAF50; color: white; }
+  .btn-secondary { background: #555; color: white; }
+  .btn-download { background: #2196F3; color: white; font-weight: bold; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+  .login { max-width: 500px; margin: 80px auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.1); }
+  .login h2 { margin-bottom: 20px; }
+  .login input { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 16px; margin-bottom: 16px; }
+  .login .instructions { background: #f0f7ff; padding: 16px; border-radius: 8px; margin-bottom: 20px; font-size: 14px; line-height: 1.6; }
+  .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 800px) { .columns { grid-template-columns: 1fr; } }
+  .panel { background: white; border-radius: 8px; padding: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+  .brief-panel { border-left: 4px solid #2196F3; }
+  .proposal-panel { border-left: 4px solid #FF9800; max-height: 700px; overflow-y: auto; }
+  .proposal-text { font-size: 14px; line-height: 1.7; white-space: pre-wrap; }
+  h2 { font-size: 16px; margin-bottom: 12px; color: #555; }
+  h3 { font-size: 14px; margin-bottom: 8px; }
+  .objective { font-size: 14px; line-height: 1.6; margin-bottom: 16px; }
+  .domain { font-size: 12px; color: #888; margin-bottom: 4px; }
+  .constraint { background: #fafafa; border: 1px solid #eee; border-radius: 6px; padding: 12px; margin-bottom: 10px; }
+  .constraint-text { font-size: 13px; font-weight: 600; margin-bottom: 8px; line-height: 1.5; }
+  .radio-group { display: flex; gap: 8px; flex-wrap: wrap; }
+  .radio-group label { font-size: 13px; padding: 5px 14px; border: 1px solid #ddd; border-radius: 20px; cursor: pointer; transition: all 0.15s; }
+  .radio-group label:hover { border-color: #999; }
+  .radio-group input { display: none; }
+  .radio-group input[value="Satisfied"]:checked + span { background: #e8f5e9; border-color: #4CAF50; }
+  .radio-group input[value="Stretched"]:checked + span { background: #fff3e0; border-color: #FF9800; }
+  .radio-group input[value="Violated"]:checked + span { background: #ffebee; border-color: #f44336; }
+  .radio-group label:has(input:checked) { font-weight: bold; }
+  .radio-group label:has(input[value="Satisfied"]:checked) { background: #e8f5e9; border-color: #4CAF50; }
+  .radio-group label:has(input[value="Stretched"]:checked) { background: #fff3e0; border-color: #FF9800; }
+  .radio-group label:has(input[value="Violated"]:checked) { background: #ffebee; border-color: #f44336; }
+  .score-bar { background: white; border-radius: 8px; padding: 16px 20px; margin-top: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); display: flex; align-items: center; gap: 30px; flex-wrap: wrap; }
+  .score-item { text-align: center; }
+  .score-item .value { font-size: 24px; font-weight: bold; }
+  .score-item .label { font-size: 12px; color: #888; }
+  .notes { flex: 1; min-width: 200px; }
+  .notes input { width: 100%; padding: 8px 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 13px; }
+  .banned { margin-top: 16px; }
+  .banned li { font-size: 13px; color: #777; margin-bottom: 4px; }
+  .done-banner { background: #e8f5e9; border: 2px solid #4CAF50; border-radius: 8px; padding: 20px; text-align: center; margin: 20px 0; }
+  .already-scored { background: #e3f2fd; padding: 8px 16px; border-radius: 4px; margin-bottom: 16px; font-size: 14px; }
+</style>
+</head>
+<body>
+
+<div id="login-screen" class="login">
+  <h2>DriftBench — Human Validation Study (Set 2)</h2>
+  <div class="instructions">
+    <strong>Context:</strong> We are evaluating whether AI models preserve the original research constraints when iteratively refining research proposals. Each item shows a <b>research question</b> with specific <b>hard constraints</b> (e.g., budget limits, sample sizes, methodological requirements), and a proposal generated by an AI model.<br><br>
+
+    <strong>Your task:</strong> For each hard constraint, judge whether the AI's proposal respects it:<br>
+    <ul style="margin: 8px 0 8px 20px;">
+      <li><b>Satisfied</b> — the proposal clearly and explicitly respects this constraint</li>
+      <li><b>Stretched</b> — technically respected but pushed to its boundaries or handled ambiguously</li>
+      <li><b>Violated</b> — the proposal clearly ignores or contradicts this constraint</li>
+    </ul>
+
+    <strong>Important:</strong><br>
+    <ul style="margin: 8px 0 8px 20px;">
+      <li>Read the <b>full proposal</b> before scoring — violations are sometimes subtle</li>
+      <li>Judge the <b>proposal content</b>, not whether the idea is good or creative</li>
+      <li>Some proposals have no violations; some have several — there is no expected distribution</li>
+      <li>You do <b>not</b> need domain expertise — constraints are designed to be objectively checkable</li>
+    </ul>
+
+    <strong>Time:</strong> ~2 hours for all 55 items. Your progress is saved in your browser — you can close and come back anytime.<br><br>
+    <strong>When done:</strong> Click "Download Scores" and send the JSON file to the study coordinator.
+  </div>
+  <input type="text" id="rater-name" placeholder="Enter your name or ID (e.g. Alice)">
+  <button class="btn-primary" style="width:100%; padding:12px; font-size:16px;" onclick="startScoring()">Start Scoring</button>
+</div>
+
+<div id="scoring-screen" style="display:none;">
+  <div class="header">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <h1>DriftBench — <span id="rater-display"></span></h1>
+      <div style="display:flex; gap:8px;">
+        <button class="btn-download" onclick="downloadResults()">Download Scores</button>
+        <button class="btn-secondary" onclick="logout()">Logout</button>
+      </div>
+    </div>
+    <div class="progress">
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+      <span class="progress-text" id="progress-text">0 / 0</span>
+    </div>
+    <div class="nav">
+      <button class="btn-secondary" onclick="prevItem()">Prev</button>
+      <button class="btn-secondary" onclick="nextUnscored()">Next Unscored</button>
+      <button class="btn-secondary" onclick="nextItem()">Next</button>
+      <span style="color:#aaa; font-size:13px; margin-left:8px;">Item <span id="item-num">1</span> / <span id="item-total">55</span></span>
+    </div>
+  </div>
+
+  <div class="container">
+    <div id="done-banner" class="done-banner" style="display:none;">
+      All items scored! Click <b>Download Scores</b> above and send the JSON file back. Thank you!
+    </div>
+    <div id="already-scored" class="already-scored" style="display:none;"></div>
+    <div class="columns">
+      <div class="panel brief-panel">
+        <div class="domain" id="item-domain"></div>
+        <h2>Research Question</h2>
+        <div class="objective" id="item-objective"></div>
+        <hr style="margin:12px 0; border:none; border-top:1px solid #eee;">
+        <h3>Hard Constraints</h3>
+        <div id="constraints-list"></div>
+        <div class="banned">
+          <h3>Banned Moves</h3>
+          <ul id="banned-list"></ul>
+        </div>
+      </div>
+      <div class="panel proposal-panel">
+        <h2>Final Proposal</h2>
+        <div class="proposal-text" id="proposal-text"></div>
+      </div>
+    </div>
+    <div class="score-bar">
+      <div class="score-item"><div class="value" id="violated-count" style="color:#f44336;">0</div><div class="label">Violated</div></div>
+      <div class="score-item"><div class="value" id="stretched-count" style="color:#FF9800;">0</div><div class="label">Stretched</div></div>
+      <div class="score-item"><div class="value" id="computed-score" style="color:#4CAF50;">4</div><div class="label">Score / 4</div></div>
+      <div class="notes"><input type="text" id="notes-input" placeholder="Notes (optional)"></div>
+      <button class="btn-primary" style="padding:12px 32px; font-size:15px;" onclick="saveAndNext()">Save & Next</button>
+    </div>
+  </div>
+</div>
+
+<script>
+let items = [];
+let results = {};
+let currentIdx = 0;
+let raterId = '';
+
+async function init() {
+  const resp = await fetch('scoring_items_set2.json');
+  items = await resp.json();
+}
+init();
+
+function startScoring() {
+  const name = document.getElementById('rater-name').value.trim();
+  if (!name) return;
+  raterId = name.toLowerCase().replace(/\s+/g, '_');
+
+  // Load any saved progress from localStorage
+  const saved = localStorage.getItem('driftbench_set2_' + raterId);
+  if (saved) {
+    results = JSON.parse(saved);
+  } else {
+    results = {};
+  }
+
+  document.getElementById('login-screen').style.display = 'none';
+  document.getElementById('scoring-screen').style.display = 'block';
+  document.getElementById('rater-display').textContent = name;
+
+  // Go to first unscored
+  currentIdx = items.findIndex(it => !(it.run_id in results));
+  if (currentIdx < 0) currentIdx = 0;
+
+  renderItem();
+}
+
+function logout() {
+  document.getElementById('login-screen').style.display = 'block';
+  document.getElementById('scoring-screen').style.display = 'none';
+}
+
+function renderItem() {
+  const item = items[currentIdx];
+  const scored = Object.keys(results).length;
+
+  document.getElementById('item-num').textContent = currentIdx + 1;
+  document.getElementById('item-total').textContent = items.length;
+  document.getElementById('progress-text').textContent = scored + ' / ' + items.length;
+  document.getElementById('progress-fill').style.width = (scored / items.length * 100) + '%';
+  document.getElementById('item-domain').textContent = 'Domain: ' + item.domain;
+  document.getElementById('item-objective').textContent = item.objective;
+  document.getElementById('proposal-text').textContent = item.final_proposal;
+
+  document.getElementById('done-banner').style.display = (scored === items.length) ? 'block' : 'none';
+
+  const existing = results[item.run_id];
+  const alreadyEl = document.getElementById('already-scored');
+  if (existing) {
+    alreadyEl.style.display = 'block';
+    alreadyEl.textContent = 'You already scored this: ' + existing.computed_score + ' / 4';
+  } else {
+    alreadyEl.style.display = 'none';
+  }
+
+  // Constraints
+  const cList = document.getElementById('constraints-list');
+  cList.innerHTML = '';
+  item.hard_constraints.forEach((c, i) => {
+    const saved = existing ? existing.constraint_statuses[i] : null;
+    const div = document.createElement('div');
+    div.className = 'constraint';
+    div.innerHTML = `
+      <div class="constraint-text">${i+1}. ${c}</div>
+      <div class="radio-group">
+        ${['Satisfied','Stretched','Violated'].map(s => `
+          <label>
+            <input type="radio" name="c${i}" value="${s}" ${saved===s?'checked':''} onchange="updateScore()">
+            <span>${s}</span>
+          </label>
+        `).join('')}
+      </div>
+    `;
+    cList.appendChild(div);
+  });
+
+  // Banned moves
+  const bList = document.getElementById('banned-list');
+  bList.innerHTML = '';
+  item.banned_moves.forEach(b => {
+    const li = document.createElement('li');
+    li.textContent = b;
+    bList.appendChild(li);
+  });
+
+  // Notes
+  document.getElementById('notes-input').value = existing ? (existing.notes || '') : '';
+
+  updateScore();
+}
+
+function updateScore() {
+  const item = items[currentIdx];
+  let violated = 0, stretched = 0;
+  item.hard_constraints.forEach((_, i) => {
+    const checked = document.querySelector(`input[name="c${i}"]:checked`);
+    if (checked) {
+      if (checked.value === 'Violated') violated++;
+      if (checked.value === 'Stretched') stretched++;
+    }
+  });
+  let score = 4;
+  if (violated >= 3) score = 0;
+  else if (violated === 2) score = 1;
+  else if (violated === 1) score = 2;
+  else if (stretched >= 1) score = 3;
+
+  document.getElementById('violated-count').textContent = violated;
+  document.getElementById('stretched-count').textContent = stretched;
+  document.getElementById('computed-score').textContent = score;
+}
+
+function saveAndNext() {
+  const item = items[currentIdx];
+  const statuses = [];
+  let allAnswered = true;
+  item.hard_constraints.forEach((_, i) => {
+    const checked = document.querySelector(`input[name="c${i}"]:checked`);
+    if (checked) {
+      statuses.push(checked.value);
+    } else {
+      allAnswered = false;
+    }
+  });
+
+  if (!allAnswered) {
+    alert('Please rate all constraints before saving.');
+    return;
+  }
+
+  const violated = statuses.filter(s => s === 'Violated').length;
+  const stretched = statuses.filter(s => s === 'Stretched').length;
+  let score = 4;
+  if (violated >= 3) score = 0;
+  else if (violated === 2) score = 1;
+  else if (violated === 1) score = 2;
+  else if (stretched >= 1) score = 3;
+
+  results[item.run_id] = {
+    run_id: item.run_id,
+    brief_id: item.brief_id,
+    rater_id: raterId,
+    constraint_statuses: statuses,
+    violated_count: violated,
+    stretched_count: stretched,
+    computed_score: score,
+    notes: document.getElementById('notes-input').value,
+  };
+
+  // Save to localStorage
+  localStorage.setItem('driftbench_set2_' + raterId, JSON.stringify(results));
+
+  // Go to next unscored
+  const nextUnscored = items.findIndex((it, i) => i > currentIdx && !(it.run_id in results));
+  if (nextUnscored >= 0) {
+    currentIdx = nextUnscored;
+  } else {
+    const firstUnscored = items.findIndex(it => !(it.run_id in results));
+    if (firstUnscored >= 0) {
+      currentIdx = firstUnscored;
+    }
+  }
+  renderItem();
+  window.scrollTo(0, 0);
+}
+
+function nextItem() { currentIdx = Math.min(currentIdx + 1, items.length - 1); renderItem(); window.scrollTo(0,0); }
+function prevItem() { currentIdx = Math.max(currentIdx - 1, 0); renderItem(); window.scrollTo(0,0); }
+function nextUnscored() {
+  const idx = items.findIndex(it => !(it.run_id in results));
+  if (idx >= 0) { currentIdx = idx; renderItem(); window.scrollTo(0,0); }
+}
+
+function downloadResults() {
+  const blob = new Blob([JSON.stringify(results, null, 2)], {type: 'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'driftbench_set2_scores_' + raterId + '.json';
+  a.click();
+}
+</script>
+</body>
+</html>
