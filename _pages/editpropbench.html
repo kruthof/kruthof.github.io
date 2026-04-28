@@ -291,7 +291,20 @@ function strHash(s) {
 
 async function init() {
   try {
-    const resp = await fetch('editpropbench_items.json');
+    // Try multiple paths to be robust to Jekyll's clean-URL handling
+    const candidates = [
+      'editpropbench_items.json',           // relative, same dir
+      '/editpropbench_items.json',           // root
+      '/_pages/editpropbench_items.json',    // _pages literal
+    ];
+    let resp = null;
+    for (const url of candidates) {
+      try {
+        const r = await fetch(url);
+        if (r.ok) { resp = r; console.log('Loaded items from:', url); break; }
+      } catch (e) { /* try next */ }
+    }
+    if (!resp) throw new Error('Could not find editpropbench_items.json at any expected path. Check console.');
     const payload = await resp.json();
     // Support both new schema {_metadata, items: []} and legacy bare-list
     if (Array.isArray(payload)) {
