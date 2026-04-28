@@ -1,0 +1,594 @@
+---
+permalink: /editpropbench.html
+layout: null
+sitemap: false
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EditPropBench Human Validation</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; color: #333; }
+  .header { background: #1a1a2e; color: white; padding: 20px 30px; position: sticky; top: 0; z-index: 100; }
+  .header h1 { font-size: 18px; }
+  .header .progress { margin-top: 8px; display: flex; align-items: center; gap: 12px; }
+  .header .progress-bar { flex: 1; height: 8px; background: #333; border-radius: 4px; overflow: hidden; }
+  .header .progress-fill { height: 100%; background: #4CAF50; transition: width 0.3s; }
+  .header .progress-text { font-size: 14px; color: #aaa; }
+  .header .nav { margin-top: 8px; display: flex; gap: 10px; align-items: center; }
+  .header button { padding: 6px 16px; border: none; border-radius: 4px; cursor: pointer; font-size: 13px; }
+  .btn-primary { background: #4CAF50; color: white; }
+  .btn-secondary { background: #555; color: white; }
+  .btn-download { background: #2196F3; color: white; font-weight: bold; }
+  .btn-upload { background: #9C27B0; color: white; font-weight: bold; }
+  .container { max-width: 1300px; margin: 0 auto; padding: 20px; }
+  .login { max-width: 600px; margin: 60px auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.1); }
+  .login h2 { margin-bottom: 20px; }
+  .login input[type="text"] { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 16px; margin-bottom: 16px; }
+  .login .instructions { background: #f0f7ff; padding: 16px; border-radius: 8px; margin-bottom: 20px; font-size: 14px; line-height: 1.6; }
+  .login .resume-section { background: #fff8e1; padding: 16px; border-radius: 8px; margin-bottom: 20px; font-size: 14px; line-height: 1.6; border: 1px solid #ffe082; }
+  .login .resume-section input[type="file"] { display: none; }
+  .login .upload-label { display: inline-block; padding: 10px 20px; background: #9C27B0; color: white; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 8px; }
+  .login .upload-label:hover { background: #7B1FA2; }
+  .login .upload-status { margin-top: 8px; font-size: 13px; color: #666; }
+  .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 900px) { .columns { grid-template-columns: 1fr; } }
+  .panel { background: white; border-radius: 8px; padding: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+  .instruction-panel { border-left: 4px solid #2196F3; }
+  .manuscript-panel { border-left: 4px solid #FF9800; max-height: 600px; overflow-y: auto; }
+  .manuscript-text { font-size: 13px; line-height: 1.7; white-space: pre-wrap; font-family: ui-monospace, 'SF Mono', Menlo, monospace; }
+  .manuscript-text .highlight { background: #fff3cd; padding: 2px 4px; border-radius: 3px; }
+  .manuscript-text .diff-orig { display: block; background: #fafafa; color: #888; text-decoration: line-through; padding: 4px 8px; border-left: 3px solid #999; margin: 4px 0; }
+  .manuscript-text .diff-rev { display: block; background: #e8f5e9; color: #1b5e20; padding: 4px 8px; border-left: 3px solid #4CAF50; margin: 4px 0; font-weight: 500; }
+  h2 { font-size: 16px; margin-bottom: 12px; color: #555; }
+  h3 { font-size: 14px; margin-bottom: 8px; }
+  .meta { font-size: 12px; color: #888; margin-bottom: 4px; }
+  .instruction-text { font-size: 14px; line-height: 1.6; margin-bottom: 16px; padding: 12px; background: #f5f5f5; border-radius: 6px; }
+  .unit-pair { margin-top: 16px; }
+  .unit-block { background: #fafafa; border: 1px solid #eee; border-radius: 6px; padding: 12px; margin-bottom: 12px; }
+  .unit-label { font-size: 12px; color: #888; font-weight: bold; text-transform: uppercase; margin-bottom: 6px; }
+  .unit-text { font-size: 14px; line-height: 1.6; }
+  .unit-text.original { background: #fff; padding: 8px; border-left: 3px solid #888; }
+  .unit-text.revised { background: #fff; padding: 8px; border-left: 3px solid #4CAF50; }
+  .questions-panel { margin-top: 20px; background: white; border-radius: 8px; padding: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); border-left: 4px solid #4CAF50; }
+  .question { margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #eee; }
+  .question:last-child { border-bottom: none; padding-bottom: 0; }
+  .question.disabled { opacity: 0.4; pointer-events: none; }
+  .question-prompt { font-size: 14px; font-weight: 600; margin-bottom: 8px; line-height: 1.5; }
+  .radio-group { display: flex; gap: 8px; flex-wrap: wrap; }
+  .radio-group label { font-size: 13px; padding: 6px 16px; border: 1px solid #ddd; border-radius: 20px; cursor: pointer; transition: all 0.15s; background: white; }
+  .radio-group label:hover { border-color: #999; }
+  .radio-group input { display: none; }
+  .radio-group label:has(input:checked) { font-weight: bold; }
+  .radio-group label:has(input[value="yes"]:checked),
+  .radio-group label:has(input[value="yes_clearly"]:checked) { background: #e8f5e9; border-color: #4CAF50; }
+  .radio-group label:has(input[value="no"]:checked),
+  .radio-group label:has(input[value="no_inconsistent"]:checked) { background: #ffebee; border-color: #f44336; }
+  .radio-group label:has(input[value="partial"]:checked) { background: #fff3e0; border-color: #FF9800; }
+  .radio-group label:has(input[value="unsure"]:checked) { background: #f3e5f5; border-color: #9C27B0; }
+  .action-bar { background: white; border-radius: 8px; padding: 16px 20px; margin-top: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .notes { flex: 1; min-width: 200px; }
+  .notes input { width: 100%; padding: 8px 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 13px; }
+  .done-banner { background: #e8f5e9; border: 2px solid #4CAF50; border-radius: 8px; padding: 20px; text-align: center; margin: 20px 0; }
+  .already-scored { background: #e3f2fd; padding: 8px 16px; border-radius: 4px; margin-bottom: 16px; font-size: 14px; }
+  .codebook { background: #fff8e1; padding: 12px; border-radius: 6px; margin-top: 12px; font-size: 13px; line-height: 1.6; border: 1px solid #ffe082; }
+  .codebook strong { color: #5d4037; }
+  .bands { background: #e3f2fd; padding: 10px 14px; border-radius: 6px; margin: 8px 0; font-size: 13px; border: 1px solid #90caf9; }
+  .bands strong { color: #0d47a1; }
+  .bands .band-row { margin: 4px 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; }
+</style>
+</head>
+<body>
+
+<div id="login-screen" class="login">
+  <h2>EditPropBench — Human Validation Study</h2>
+  <div class="instructions">
+    <strong>Context:</strong> EditPropBench measures whether AI models propagate edits consistently when revising scientific manuscripts. When the author changes one fact (e.g., "230 documents" → "95 documents"), AI models should update every passage whose meaning depends on it — including qualitative descriptions like "large-scale" or "comprehensive" that imply the underlying number.<br><br>
+
+    <strong>Your task:</strong> For each item, you will see (1) the full original manuscript, (2) the edit instruction the AI was given, and (3) one specific highlighted unit shown in BOTH its original and AI-revised forms. Your job is to judge whether the AI did the right thing for THAT unit.<br><br>
+
+    For each unit you answer up to <b>4 sequential questions</b>:
+    <ul style="margin: 8px 0 8px 20px;">
+      <li><b>Q1.</b> Given the edit instruction, <em>should this highlighted text have been changed</em> in the revision?</li>
+      <li><b>Q2.</b> (if Q1 = yes) Was the highlighted text <em>actually changed</em> in the AI's revision?</li>
+      <li><b>Q3a.</b> (if Q2 = yes/partial) Is the new wording <em>factually consistent</em> with the new fact value?</li>
+      <li><b>Q3b.</b> (if Q2 = yes/partial) Is the new wording <em>well expressed</em> (grammatical, natural English)?</li>
+    </ul>
+
+    <strong>Important:</strong>
+    <ul style="margin: 8px 0 8px 20px;">
+      <li>Read the <b>edit instruction</b> first to understand what the author wanted</li>
+      <li>Skim the <b>full manuscript</b> for context</li>
+      <li>Focus on the <b>highlighted unit</b> — the original and revised versions are shown side-by-side</li>
+      <li>You judge <b>meaning consistency with the edit</b>, not writing quality or style</li>
+      <li>"Reasonable" means a competent human editor would accept the rewrite as logically consistent — exact word choice doesn't have to match a specific phrasing</li>
+    </ul>
+
+    <strong>Time:</strong> ~2 hours for all items. Your progress is auto-saved in your browser. You can also <b>download a save file</b> to resume on a different computer.
+  </div>
+
+  <div class="resume-section">
+    <strong>Resuming a previous session?</strong><br>
+    Upload your saved progress file to continue where you left off:
+    <br>
+    <label class="upload-label" for="resume-file">📂 Upload Progress File</label>
+    <input type="file" id="resume-file" accept=".json" onchange="handleUpload(event)">
+    <div class="upload-status" id="upload-status"></div>
+  </div>
+
+  <input type="text" id="rater-name" placeholder="Enter your name or ID (e.g. Alice)">
+  <button class="btn-primary" style="width:100%; padding:12px; font-size:16px;" onclick="startScoring()">Start / Resume</button>
+</div>
+
+<div id="scoring-screen" style="display:none;">
+  <div class="header">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <h1>EditPropBench — <span id="rater-display"></span></h1>
+      <div style="display:flex; gap:8px;">
+        <button class="btn-download" onclick="downloadResults()">💾 Save Progress / Download</button>
+        <button class="btn-secondary" onclick="logout()">Logout</button>
+      </div>
+    </div>
+    <div class="progress">
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+      <span class="progress-text" id="progress-text">0 / 0</span>
+    </div>
+    <div class="nav">
+      <button class="btn-secondary" onclick="prevItem()">‹ Prev</button>
+      <button class="btn-secondary" onclick="nextUnscored()">Next Unscored ›</button>
+      <button class="btn-secondary" onclick="nextItem()">Next ›</button>
+      <span style="color:#aaa; font-size:13px; margin-left:8px;">Item <span id="item-num">1</span> / <span id="item-total">60</span></span>
+    </div>
+  </div>
+
+  <div class="container">
+    <div id="done-banner" class="done-banner" style="display:none;">
+      ✓ All items scored! Click <b>Save Progress / Download</b> above and send the JSON file back. Thank you!
+    </div>
+    <div id="already-scored" class="already-scored" style="display:none;"></div>
+
+    <div class="columns">
+      <div class="panel instruction-panel">
+        <div class="meta" id="item-meta"></div>
+        <h2>Edit Instruction</h2>
+        <div class="instruction-text" id="instruction-text"></div>
+
+        <h2>Highlighted unit — original vs revised</h2>
+        <div class="unit-pair">
+          <div class="unit-block">
+            <div class="unit-label">Original (before AI revision)</div>
+            <div class="unit-text original" id="original-unit"></div>
+          </div>
+          <div class="unit-block">
+            <div class="unit-label">Revised (AI's output)</div>
+            <div class="unit-text revised" id="revised-unit"></div>
+          </div>
+        </div>
+
+        <div class="bands">
+          <strong>📏 Qualifier bands (starting guide — not hard cutoffs):</strong>
+          <div class="band-row"><b>MODEL POOL:</b>  narrow ≈ 1–3 models  •  moderate ≈ 4–8  •  comprehensive ≈ 8+</div>
+          <div class="band-row"><b>CORPUS SIZE:</b>  small-scale &lt; ~100 items  •  medium-scale ~100–500  •  large-scale 500+</div>
+          <div style="font-size:12px; color:#1565c0; margin-top:6px;">Single-step boundary changes (e.g., 5→4 models) are genuinely ambiguous — pick <b>unsure</b> if you're unsure.</div>
+        </div>
+
+        <div class="codebook">
+          <strong>Quick reference:</strong><br>
+          <strong>Q1 yes:</strong> the unit's claim depends on the value being edited; it needs updating to stay consistent.<br>
+          <strong>Q1 no:</strong> the unit doesn't reference the edited fact (or its dependency); leaving it unchanged is correct.<br>
+          <strong>Q2 yes:</strong> the AI rewrote the unit. <strong>Q2 partial:</strong> only some words changed. <strong>Q2 no:</strong> identical to original.<br>
+          <strong>Q3a (factual):</strong> ignore wording quality — does the new text say something compatible with the updated fact value?<br>
+          <strong>Q3b (expression):</strong> ignore meaning — does the new text read as natural English (no broken syntax, dangling clauses, awkward inserts)?<br>
+          <br>
+          <strong>Boundary cases:</strong> when the new value sits AT or NEAR a band edge (e.g., 5→4 models, 95→105 documents), <em>both Q1=yes and Q1=no are defensible</em>. When in doubt, pick <b>"unsure"</b> — that's a valid answer, not a failure.<br>
+          <br>
+          <strong>The decision is about meaning, not arithmetic.</strong> Ask: would a careful reader notice that the original phrasing now feels slightly off given the new value? If yes → Q1=yes. If the phrasing still reads naturally → Q1=no.
+        </div>
+      </div>
+
+      <div class="panel manuscript-panel">
+        <h2>Manuscript context (highlighted unit shown as ORIGINAL → REVISED diff inline)</h2>
+        <div style="font-size:12px; color:#888; margin-bottom:8px;">
+          The full manuscript below is what the AI saw. The line you're judging is shown TWICE: the original (struck-through, gray) and the AI's revision (green). All other lines are the original — the AI may have changed those too, but they are not under judgment for this item.
+        </div>
+        <div class="manuscript-text" id="manuscript-text"></div>
+      </div>
+    </div>
+
+    <div class="questions-panel">
+      <h2>Your judgment</h2>
+
+      <div class="question" id="q1-block">
+        <div class="question-prompt">Q1. Given the edit instruction, <em>should this highlighted text have been changed</em> in the revision?</div>
+        <div class="radio-group">
+          <label><input type="radio" name="q1" value="yes" onchange="onQ1Change()"><span>Yes — needs to change</span></label>
+          <label><input type="radio" name="q1" value="no" onchange="onQ1Change()"><span>No — should stay the same</span></label>
+          <label><input type="radio" name="q1" value="unsure" onchange="onQ1Change()"><span>Unsure</span></label>
+        </div>
+      </div>
+
+      <div class="question disabled" id="q2-block">
+        <div class="question-prompt">Q2. Was the highlighted text actually changed in the AI's revision?</div>
+        <div class="radio-group">
+          <label><input type="radio" name="q2" value="yes" onchange="onQ2Change()"><span>Yes — clearly changed</span></label>
+          <label><input type="radio" name="q2" value="partial" onchange="onQ2Change()"><span>Partially — only some words</span></label>
+          <label><input type="radio" name="q2" value="no" onchange="onQ2Change()"><span>No — identical</span></label>
+        </div>
+      </div>
+
+      <div class="question disabled" id="q3a-block">
+        <div class="question-prompt">Q3a. Is the new wording <em>factually consistent</em> with the new fact value?
+          <span style="font-weight:normal; color:#666; font-size:13px;">(Ignore writing quality — just: does it say something compatible with the updated fact?)</span>
+        </div>
+        <div class="radio-group">
+          <label><input type="radio" name="q3a" value="yes"><span>Yes — consistent</span></label>
+          <label><input type="radio" name="q3a" value="no"><span>No — contradicts the new fact</span></label>
+          <label><input type="radio" name="q3a" value="unsure"><span>Unsure</span></label>
+        </div>
+      </div>
+
+      <div class="question disabled" id="q3b-block">
+        <div class="question-prompt">Q3b. Is the new wording <em>well expressed</em>?
+          <span style="font-weight:normal; color:#666; font-size:13px;">(Reads as natural English a competent editor would accept; no grammar mismatches or awkward inserts?)</span>
+        </div>
+        <div class="radio-group">
+          <label><input type="radio" name="q3b" value="yes"><span>Yes — reads well</span></label>
+          <label><input type="radio" name="q3b" value="no"><span>No — awkward / ungrammatical</span></label>
+          <label><input type="radio" name="q3b" value="unsure"><span>Unsure</span></label>
+        </div>
+      </div>
+    </div>
+
+    <div class="action-bar">
+      <div class="notes"><input type="text" id="notes-input" placeholder="Notes (optional, e.g. why you chose 'unsure')"></div>
+      <label style="display:flex; align-items:center; gap:6px; font-size:13px; color:#c62828; cursor:pointer; padding:6px 12px; border:1px solid #ffcdd2; border-radius:4px;">
+        <input type="checkbox" id="flag-broken">
+        🚩 Flag this item as broken/unannotatable
+      </label>
+      <button class="btn-primary" style="padding:12px 32px; font-size:15px;" onclick="saveAndNext()">Save & Next</button>
+    </div>
+  </div>
+</div>
+
+<script>
+let items = [];
+let metadata = {};
+let results = {};
+let currentIdx = 0;
+let raterId = '';
+let pendingUploadResults = null;
+
+// Simple deterministic seeded RNG (mulberry32) for per-rater shuffle
+function seededRng(seed) {
+  let a = seed >>> 0;
+  return function() {
+    a = (a + 0x6D2B79F5) >>> 0;
+    let t = a;
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+function shuffleSeeded(arr, seed) {
+  const rng = seededRng(seed);
+  const out = arr.slice();
+  for (let i = out.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    [out[i], out[j]] = [out[j], out[i]];
+  }
+  return out;
+}
+
+function strHash(s) {
+  let h = 0;
+  for (let i = 0; i < s.length; i++) { h = ((h << 5) - h + s.charCodeAt(i)) | 0; }
+  return h >>> 0;
+}
+
+async function init() {
+  try {
+    const resp = await fetch('editpropbench_items.json');
+    const payload = await resp.json();
+    // Support both new schema {_metadata, items: []} and legacy bare-list
+    if (Array.isArray(payload)) {
+      items = payload; metadata = {};
+    } else {
+      items = payload.items || [];
+      metadata = payload._metadata || {};
+    }
+  } catch (e) {
+    alert('Could not load editpropbench_items.json — make sure the file is in the same directory.');
+  }
+}
+init();
+
+function handleUpload(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    try {
+      const parsed = JSON.parse(e.target.result);
+      let uploadedSha = null;
+      if (parsed.results && typeof parsed.results === 'object') {
+        pendingUploadResults = parsed.results;
+        uploadedSha = parsed.items_sha256 || null;
+        if (parsed.rater_id) {
+          document.getElementById('rater-name').value = parsed.rater_id;
+        }
+      } else {
+        pendingUploadResults = parsed;
+      }
+      const n = Object.keys(pendingUploadResults).length;
+      // Provenance check: compare items_sha256
+      const currentSha = metadata.items_sha256 || null;
+      let warning = '';
+      if (uploadedSha && currentSha && uploadedSha !== currentSha) {
+        // Find any annotations that refer to items NOT in the current items list
+        const currentIds = new Set(items.map(it => it.annotation_id));
+        const stale = Object.keys(pendingUploadResults).filter(aid => !currentIds.has(aid));
+        const goldStale = Object.keys(pendingUploadResults).filter(aid => aid.startsWith('epb_gold_'));
+        warning = ` ⚠ items_sha256 mismatch (uploaded:${uploadedSha.slice(0,8)} vs current:${currentSha.slice(0,8)}). ` +
+                  `${stale.length} answers refer to items no longer in the file; ${goldStale.length} are gold items that may have been redefined. ` +
+                  `Re-annotate those when prompted.`;
+      }
+      document.getElementById('upload-status').textContent =
+        `✓ Loaded ${n} previously-scored items.${warning} Enter your name and click Start / Resume.`;
+      document.getElementById('upload-status').style.color = warning ? '#ef6c00' : '#2e7d32';
+    } catch (err) {
+      document.getElementById('upload-status').textContent = '✗ Could not parse JSON: ' + err.message;
+      document.getElementById('upload-status').style.color = '#c62828';
+      pendingUploadResults = null;
+    }
+  };
+  reader.readAsText(file);
+}
+
+function startScoring() {
+  const name = document.getElementById('rater-name').value.trim();
+  if (!name) { alert('Please enter your name first.'); return; }
+  raterId = name.toLowerCase().replace(/\s+/g, '_');
+
+  // Per-rater deterministic shuffle (seeded by rater_id) so each rater
+  // sees items in a different order while the items.json itself is
+  // canonical. Validity defense (cf. Dillman, panel review).
+  if (metadata.per_rater_shuffle !== false) {
+    items = shuffleSeeded(items, strHash(raterId));
+  }
+
+  // Priority order: uploaded file > localStorage > fresh start
+  if (pendingUploadResults !== null) {
+    results = pendingUploadResults;
+    localStorage.setItem('editpropbench_' + raterId, JSON.stringify(results));
+  } else {
+    const saved = localStorage.getItem('editpropbench_' + raterId);
+    results = saved ? JSON.parse(saved) : {};
+  }
+
+  document.getElementById('login-screen').style.display = 'none';
+  document.getElementById('scoring-screen').style.display = 'block';
+  document.getElementById('rater-display').textContent = name;
+
+  currentIdx = items.findIndex(it => !(it.annotation_id in results));
+  if (currentIdx < 0) currentIdx = 0;
+  renderItem();
+}
+
+function logout() {
+  document.getElementById('login-screen').style.display = 'block';
+  document.getElementById('scoring-screen').style.display = 'none';
+  document.getElementById('upload-status').textContent = '';
+  pendingUploadResults = null;
+}
+
+function renderItem() {
+  const item = items[currentIdx];
+  if (!item) return;
+  const scored = Object.keys(results).length;
+
+  document.getElementById('item-num').textContent = currentIdx + 1;
+  document.getElementById('item-total').textContent = items.length;
+  document.getElementById('progress-text').textContent = scored + ' / ' + items.length;
+  document.getElementById('progress-fill').style.width = (scored / items.length * 100) + '%';
+  document.getElementById('item-meta').textContent =
+    'Item ' + item.annotation_id + ' · model: ' + (item.model_id || 'n/a') +
+    ' · protocol: ' + (item.protocol || 'n/a') +
+    ' · unit type: ' + (item.unit_type || 'n/a');
+
+  document.getElementById('instruction-text').textContent = item.edit_instruction;
+  document.getElementById('original-unit').textContent = item.original_unit_text;
+  document.getElementById('revised-unit').textContent = item.revised_unit_text;
+
+  // Render manuscript with inline ORIG → REVISED diff for the unit
+  const ms = item.original_manuscript || '';
+  const unitMarker = '[' + (item.unit_id || '') + ']';
+  const escape = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  if (item.unit_id) {
+    const lines = ms.split('\n');
+    const out = [];
+    for (let i = 0; i < lines.length; i++) {
+      if (lines[i].startsWith(unitMarker)) {
+        // Replace this line with original (strikethrough) + revised (green)
+        out.push('<span class="diff-orig">' + escape(lines[i]) + '</span>');
+        out.push('<span class="diff-rev">' + escape(unitMarker + ' ' + (item.revised_unit_text || '')) + '</span>');
+      } else {
+        out.push(escape(lines[i]));
+      }
+    }
+    document.getElementById('manuscript-text').innerHTML = out.join('\n');
+  } else {
+    document.getElementById('manuscript-text').innerHTML = escape(ms);
+  }
+
+  document.getElementById('done-banner').style.display = (scored === items.length) ? 'block' : 'none';
+
+  const existing = results[item.annotation_id];
+  const alreadyEl = document.getElementById('already-scored');
+  if (existing) {
+    alreadyEl.style.display = 'block';
+    let parts = ['Q1=' + existing.q1];
+    if (existing.q2) parts.push('Q2=' + existing.q2);
+    if (existing.q3a) parts.push('Q3a=' + existing.q3a);
+    if (existing.q3b) parts.push('Q3b=' + existing.q3b);
+    if (existing.flagged_broken) parts.push('FLAGGED');
+    alreadyEl.textContent = '✓ You already scored this. ' + parts.join(', ');
+  } else {
+    alreadyEl.style.display = 'none';
+  }
+
+  // Reset radio buttons + flag
+  document.querySelectorAll('input[name="q1"]').forEach(r => r.checked = false);
+  document.querySelectorAll('input[name="q2"]').forEach(r => r.checked = false);
+  document.querySelectorAll('input[name="q3a"]').forEach(r => r.checked = false);
+  document.querySelectorAll('input[name="q3b"]').forEach(r => r.checked = false);
+  document.getElementById('flag-broken').checked = false;
+
+  if (existing) {
+    if (existing.q1) document.querySelector('input[name="q1"][value="' + existing.q1 + '"]').checked = true;
+    if (existing.q2) document.querySelector('input[name="q2"][value="' + existing.q2 + '"]').checked = true;
+    if (existing.q3a) document.querySelector('input[name="q3a"][value="' + existing.q3a + '"]').checked = true;
+    if (existing.q3b) document.querySelector('input[name="q3b"][value="' + existing.q3b + '"]').checked = true;
+    if (existing.flagged_broken) document.getElementById('flag-broken').checked = true;
+  }
+
+  document.getElementById('notes-input').value = existing ? (existing.notes || '') : '';
+
+  updateQuestionStates();
+}
+
+function onQ1Change() {
+  // If Q1 != "yes", clear Q2/Q3a/Q3b
+  const q1 = document.querySelector('input[name="q1"]:checked');
+  if (q1 && q1.value !== 'yes') {
+    document.querySelectorAll('input[name="q2"]').forEach(r => r.checked = false);
+    document.querySelectorAll('input[name="q3a"]').forEach(r => r.checked = false);
+    document.querySelectorAll('input[name="q3b"]').forEach(r => r.checked = false);
+  }
+  updateQuestionStates();
+}
+
+function onQ2Change() {
+  const q2 = document.querySelector('input[name="q2"]:checked');
+  if (q2 && q2.value === 'no') {
+    document.querySelectorAll('input[name="q3a"]').forEach(r => r.checked = false);
+    document.querySelectorAll('input[name="q3b"]').forEach(r => r.checked = false);
+  }
+  updateQuestionStates();
+}
+
+function updateQuestionStates() {
+  const q1 = document.querySelector('input[name="q1"]:checked');
+  const q2 = document.querySelector('input[name="q2"]:checked');
+  document.getElementById('q2-block').classList.toggle('disabled', !(q1 && q1.value === 'yes'));
+  const q3enabled = q2 && (q2.value === 'yes' || q2.value === 'partial');
+  document.getElementById('q3a-block').classList.toggle('disabled', !q3enabled);
+  document.getElementById('q3b-block').classList.toggle('disabled', !q3enabled);
+}
+
+function isComplete() {
+  // Flagged items count as complete regardless of Q1-Q3
+  if (document.getElementById('flag-broken').checked) return true;
+  const q1 = document.querySelector('input[name="q1"]:checked');
+  if (!q1) return false;
+  if (q1.value !== 'yes') return true;
+  const q2 = document.querySelector('input[name="q2"]:checked');
+  if (!q2) return false;
+  if (q2.value === 'no') return true;
+  const q3a = document.querySelector('input[name="q3a"]:checked');
+  const q3b = document.querySelector('input[name="q3b"]:checked');
+  return !!(q3a && q3b);
+}
+
+function captureAnswer() {
+  const item = items[currentIdx];
+  const q1 = document.querySelector('input[name="q1"]:checked');
+  const q2 = document.querySelector('input[name="q2"]:checked');
+  const q3a = document.querySelector('input[name="q3a"]:checked');
+  const q3b = document.querySelector('input[name="q3b"]:checked');
+  const flagged = document.getElementById('flag-broken').checked;
+  return {
+    annotation_id: item.annotation_id,
+    item_id: item.item_id,
+    model_id: item.model_id,
+    protocol: item.protocol,
+    unit_id: item.unit_id,
+    unit_type: item.unit_type,
+    is_gold: !!item.is_gold,
+    rater_id: raterId,
+    q1: q1 ? q1.value : null,
+    q2: q2 ? q2.value : null,
+    q3a: q3a ? q3a.value : null,
+    q3b: q3b ? q3b.value : null,
+    flagged_broken: flagged,
+    notes: document.getElementById('notes-input').value,
+    timestamp: new Date().toISOString(),
+  };
+}
+
+function saveAndNext() {
+  if (!isComplete()) {
+    alert('Please answer all required questions before saving. (Q1 always; Q2 if Q1=yes; Q3 if Q2=yes/partial.)');
+    return;
+  }
+  const item = items[currentIdx];
+  results[item.annotation_id] = captureAnswer();
+  localStorage.setItem('editpropbench_' + raterId, JSON.stringify(results));
+
+  const nextUnscored = items.findIndex((it, i) => i > currentIdx && !(it.annotation_id in results));
+  if (nextUnscored >= 0) {
+    currentIdx = nextUnscored;
+  } else {
+    const firstUnscored = items.findIndex(it => !(it.annotation_id in results));
+    if (firstUnscored >= 0) currentIdx = firstUnscored;
+  }
+  renderItem();
+  window.scrollTo(0, 0);
+}
+
+function autoSaveCurrent() {
+  // If user has answered enough to be valid, save silently. Otherwise warn.
+  const q1 = document.querySelector('input[name="q1"]:checked');
+  if (!q1) return true;  // nothing to save
+  if (isComplete()) {
+    const item = items[currentIdx];
+    results[item.annotation_id] = captureAnswer();
+    localStorage.setItem('editpropbench_' + raterId, JSON.stringify(results));
+    return true;
+  }
+  return confirm('You have a partial answer on this item. Leave without saving it?');
+}
+
+function nextItem() { if (!autoSaveCurrent()) return; currentIdx = Math.min(currentIdx + 1, items.length - 1); renderItem(); window.scrollTo(0,0); }
+function prevItem() { if (!autoSaveCurrent()) return; currentIdx = Math.max(currentIdx - 1, 0); renderItem(); window.scrollTo(0,0); }
+function nextUnscored() {
+  if (!autoSaveCurrent()) return;
+  const idx = items.findIndex(it => !(it.annotation_id in results));
+  if (idx >= 0) { currentIdx = idx; renderItem(); window.scrollTo(0,0); }
+}
+
+function downloadResults() {
+  const payload = {
+    rater_id: raterId,
+    saved_at: new Date().toISOString(),
+    n_total: items.length,
+    n_scored: Object.keys(results).length,
+    // Provenance — proves which version of the items file was annotated
+    items_sha256: metadata.items_sha256 || null,
+    builder_git_sha: metadata.builder_git_sha || null,
+    schema_version: metadata.schema_version || null,
+    results: results,
+  };
+  const blob = new Blob([JSON.stringify(payload, null, 2)], {type: 'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  const ts = new Date().toISOString().slice(0, 19).replace(/[T:]/g, '-');
+  a.download = 'editpropbench_progress_' + raterId + '_' + ts + '.json';
+  a.click();
+}
+</script>
+</body>
+</html>
