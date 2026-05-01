@@ -33,8 +33,17 @@
 
           <!-- About -->
           <li class="nav-item {% if page.title == 'about' %}active{% endif %}">
-            <a class="nav-link" href="{{ '/' | relative_url }}">about
+            <a class="nav-link" href="{{ '/' | relative_url }}">About
               {%- if page.title == "about" -%}
+              <span class="sr-only">(current)</span>
+              {%- endif -%}
+            </a>
+          </li>
+
+          <!-- Publications -->
+          <li class="nav-item {% if page.title == 'Publications' %}active{% endif %}">
+            <a class="nav-link" href="{{ '/publications/' | relative_url }}">Publications
+              {%- if page.title == "Publications" -%}
               <span class="sr-only">(current)</span>
               {%- endif -%}
             </a>
