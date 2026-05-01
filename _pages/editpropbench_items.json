@@ -1,3 +1,8 @@
+---
+permalink: /editpropbench_items.json
+layout: null
+sitemap: false
+---
 {
   "_metadata": {
     "schema_version": "epb_human_anno_v2",
