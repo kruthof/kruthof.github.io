@@ -39,9 +39,6 @@ In `EditPropBench`, I evaluate whether LLM editors propagate local factual edits
 
 I am currently extending this agenda into medical research, where AI-assisted protocol design and evidence synthesis require stronger safeguards. In `collaboration with clinical researchers`, I am developing methods to evaluate whether LLM-generated research designs satisfy the downstream methodological, ethical, statistical, and feasibility obligations implied by their own choices.
 
-## Broader Interests
-
-My broader interests include AI evaluation, natural language processing, human–AI collaboration, science of science, text-based empirical analysis, and AI-mediated decision-making. Empirically, I have worked with scientific, financial, economic, and media text.
 
 ## Background
 
