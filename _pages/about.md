@@ -19,7 +19,7 @@ social: false
 ---
 I study how AI systems reshape `information processing`, `decision-making`, and the `production of knowledge`.
 
-My work examines how complex information is interpreted, incorporated into decisions, and translated into outcomes, especially in settings where AI systems mediate what people read, measure, revise, and believe. Empirically, I focus on economic, financial, scientific, and media text. Methodologically, I combine machine learning, text-based empirical analysis, benchmark design, and economic modeling.
+My work examines how complex information is interpreted, incorporated into decisions, and translated into outcomes, especially in settings where AI systems mediate what people read, measure, revise, and believe. Empirically, I focus on economic, financial, scientific, and media information. Methodologically, I combine machine learning, text-based empirical analysis, benchmark design, and economic modeling.
 
 Two questions guide my research:
 
