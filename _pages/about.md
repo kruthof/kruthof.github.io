@@ -32,15 +32,6 @@ I currently frame this agenda as `human-centered reliable AI`. Rather than askin
 
 > How can we design evaluation methods and human–AI workflows that support reliable, evidence-grounded, and accountable use of AI?
 
-## Research
-
-My current work examines the reliability of large language models in expert-facing knowledge workflows.
-
-I study how models preserve constraints, propagate implications, distinguish evidence from plausibility, and support human judgment in settings where errors are consequential but not always immediately visible. This includes both technical evaluation of model behavior and human-centered evaluation of how AI systems are used, interpreted, and verified by experts.
-
-Methodologically, my work combines machine learning, natural language processing, benchmark design, experimental evaluation, and emerging human-centered methods such as stakeholder-oriented study design, workflow analysis, and mixed-methods evaluation.
-
-I am especially interested in AI systems that do not replace expert judgment, but help make reasoning, evidence, uncertainty, and dependencies more inspectable.
 
 ## Background
 
