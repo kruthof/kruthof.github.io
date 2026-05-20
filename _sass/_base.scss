@@ -139,12 +139,15 @@ blockquote {
     }
   }
   @media (min-width: 576px) {
-    .navbar-nav .nav-item + .nav-item::before {
-      content: "|";
-      color: var(--global-text-color);
-      opacity: 0.4;
-      align-self: center;
-      padding: 0 0.25rem;
+    .navbar-nav .nav-item + .nav-item {
+      display: flex;
+      align-items: center;
+      &::before {
+        content: "|";
+        color: var(--global-text-color);
+        opacity: 0.4;
+        padding: 0 0.4rem;
+      }
     }
   }
   .navbar-nav .nav-item.active>.nav-link {
