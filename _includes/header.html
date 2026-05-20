@@ -49,6 +49,15 @@
             </a>
           </li>
 
+          <!-- Clinical Hybrid Intelligence -->
+          <li class="nav-item {% if page.title == 'Clinical Hybrid Intelligence' %}active{% endif %}">
+            <a class="nav-link" href="{{ '/projects/clinical-hybrid-intelligence/' | relative_url }}">Clinical Hybrid Intelligence
+              {%- if page.title == "Clinical Hybrid Intelligence" -%}
+              <span class="sr-only">(current)</span>
+              {%- endif -%}
+            </a>
+          </li>
+
           <!-- Other pages -->
           {%- assign sorted_pages = site.pages | sort: "title" -%}
 
