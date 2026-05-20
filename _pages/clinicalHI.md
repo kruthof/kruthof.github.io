@@ -1,14 +1,12 @@
 ---
 layout: page
-title: Clinical Hybrid Intelligence
+title: Clinical Hybrid Intelligence in Anesthesia
 permalink: /projects/clinical-hybrid-intelligence/
 
 news: false
 selected_papers: false
 social: false
 ---
-
-# Clinical Hybrid Intelligence in Anesthesia
 
 This project studies how AI systems can support clinicians in complex perioperative decision-making while preserving clinical judgment, accountability, and trust.
 
