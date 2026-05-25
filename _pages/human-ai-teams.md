@@ -19,3 +19,11 @@ Anchored in obstetric anesthesia — where decisions are time-pressured, multi-s
 Three threads run across the work: (1) team-level appropriate reliance — extending HCI work on individual AI use to the distributed decision-making clinicians actually do; (2) trust trajectories in real clinical use, not lab vignettes; (3) maternal anesthesia equity as the moral and methodological centre, with explicit hypotheses about whether AI assistance narrows or preserves documented care gaps.
 
 The work is part of the broader Hybrid Intelligence research community, alongside collaborators studying human–AI teams across medicine, science, and engineering. The methods generalize beyond obstetric anesthesia to any team-based safety-critical decision setting — ICU, operating room, emergency resuscitation — but the empirical anchoring is where the cohort is dense, the teams are clear, and the equity claims are testable.
+
+<div style="position: relative; width: 100%; padding-bottom: 56.25%; margin-top: 1.5rem;">
+  <iframe src="https://www.youtube.com/embed/FkVFZej8i7o"
+          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+          title="Human–AI Teams in Clinical Decision-Making"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+</div>
