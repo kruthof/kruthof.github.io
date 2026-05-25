@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Human–AI Teams
+title: Human–AI Interaction in High-Stakes Clinical Decision-Making
 permalink: /projects/human-ai-teams/
 
 news: false
@@ -8,7 +8,6 @@ selected_papers: false
 social: false
 ---
 
-## Human–AI Interaction in High-Stakes Clinical Decision-Making
 
 How clinicians, AI systems, and patients make decisions together — and what makes those decisions safer, more equitable, and more accountable.
 
